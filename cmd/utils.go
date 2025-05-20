@@ -145,7 +145,8 @@ func PrintTable(config *clientcmdapi.Config) error {
 		// Turn On String Wrapping
 		tabulate.SetWrapStrings(true)
 		// Render the table
-		tabulate.SetAlign("center")
+		tabulate.SetAlign("left")
+		tabulate.SetMaxCellSize(32)
 		fmt.Println(tabulate.Render("grid", "left"))
 	} else {
 		return errors.New("context not found")
